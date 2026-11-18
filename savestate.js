@@ -249,9 +249,9 @@ export const LOAD_KEY = MAC ? '⌘O' : 'Ctrl+O';
 // Fair saving: a save costs 20% of the cash in hand (saving and reloading to cheat hurts), at
 // least SAVE_MIN_COST, at most one per cooldown, and is not allowed while wanted or during a
 // job. The autosave after a job or frenzy is free.
-export const SAVE_MIN_COST = 10000;
-export const saveCost = (cash) => Math.max(SAVE_MIN_COST, Math.ceil(cash / 5));
-export const SAVE_COOLDOWN_MS = 2 * 60 * 1000;
+export const SAVE_MIN_COST = 0;
+export const saveCost = (cash) => 0;
+export const SAVE_COOLDOWN_MS = 0;
 
 const until = async (ready, ms = 3000) => {
   for (const end = performance.now() + ms; !ready() && performance.now() < end;) await new Promise((r) => setTimeout(r, 20));
