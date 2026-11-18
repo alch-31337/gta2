@@ -1,5 +1,6 @@
 # GTA2 in your browser
 
+
 **Grand Theft Auto 2 (1999), the real game, in a browser tab.** No install. Bring friends.
 
 ### ▶ [Play now](https://m1stermo.github.io/gta2/)
