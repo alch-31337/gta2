@@ -1212,8 +1212,20 @@ async function start(getFiles, { cacheAfterStart = false, coop = null, loadSlot 
     const files = await getFiles();
     validate(files);
     await writeFiles(Module, files);
+
     const restored = await storage.restoreInto(Module.FS);
     if (restored) console.log(`Restored ${restored} saved file(s)`);
+
+    for (const name of ['bil.sty', 'ste.sty', 'wil.sty', 'fstyle.sty', 'r.gxt']) {
+      const response = await fetch('./' + name);
+      if (!response.ok) throw new Error('Datei fehlt: ' + name);
+
+      Module.FS.writeFile(
+        '/gta2/data/' + name,
+        new Uint8Array(await response.arrayBuffer())
+      );
+    }
+
     // The game's text: data/<letter>.gxt for the web language, generated from
     // e.gxt when the user's files do not ship it (before the engine loads it).
     // Co-op: the host's language for everyone (lobby settings), whatever each player's page shows.
