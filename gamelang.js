@@ -12,8 +12,8 @@ import { GAME_TRANSLATIONS } from './gxt-translations.js?v=11ff9757d2';
 import { translateGxt } from './gxtgen.js?v=11ff9757d2';
 
 const GAME_DIR = '/gta2';
-const GXT_LETTERS = { en: 'e', es: 's', fr: 'f' };
-const LANG_NAMES = { en: 'English', es: 'Español', fr: 'Français' };
+const GXT_LETTERS = { en: 'r', es: 's', fr: 'f' };
+const LANG_NAMES = { en: 'Russian', es: 'Español', fr: 'Français' };
 
 registerDict({
   en: {
